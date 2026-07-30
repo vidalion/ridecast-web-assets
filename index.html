@@ -199,6 +199,21 @@
   .foot-col a:hover{color:var(--fg)}
   .foot-bottom{border-top:1px solid var(--border);margin-top:44px;padding-top:26px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted2);flex-wrap:wrap;gap:12px}
 
+  .legal{padding:74px 0;border-top:1px solid var(--border)}
+  .legal-wrap{max-width:760px}
+  .legal h2{font-size:34px;font-weight:700;margin:14px 0 6px;letter-spacing:-.03em}
+  .legal-updated{color:var(--muted2);font-size:13px;margin-bottom:26px}
+  .legal h3{font-family:var(--display);font-size:18px;font-weight:600;margin:26px 0 10px;color:var(--fg)}
+  .legal p{color:var(--muted);font-size:15.5px;margin-bottom:12px;line-height:1.65}
+  .legal ul{list-style:none;margin:0 0 12px}
+  .legal li{color:var(--muted);font-size:15.5px;padding:6px 0 6px 20px;position:relative;line-height:1.6}
+  .legal li::before{content:"";position:absolute;left:2px;top:14px;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+  .legal a{color:var(--primary);text-decoration:none}
+  .legal a:hover{text-decoration:underline}
+  .legal strong{color:#D4E3F7;font-weight:600}
+  .legal .back{display:inline-flex;align-items:center;gap:7px;margin-top:26px;color:var(--muted);font-size:14px;text-decoration:none}
+  .legal .back:hover{color:var(--fg)}
+
   @media(max-width:860px){
     .hero .wrap,.feat2,.foot-grid{grid-template-columns:1fr}
     .feat2.rev .fcopy{order:0}
@@ -232,7 +247,7 @@
       <p class="sub">RideCast turns the forecast into one simple answer: <b>is it a good time to ride?</b> A personalised Ride Score from the conditions that actually matter — rain, wind, temperature, your route and the times you travel.</p>
       <div class="hero-cta" id="get">
         <div class="badges">
-          <a class="store" href="APPSTORE_URL"><svg viewBox="0 0 24 24" fill="#000"><path d="M17.05 12.04c-.03-2.6 2.12-3.84 2.22-3.9-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.93-.03-.01-2.71-1.04-2.74-4.12-.02-2.58 2.11-3.82 2.21-3.88M14.6 4.5c.71-.87 1.19-2.07 1.06-3.27-1.02.04-2.27.68-3.01 1.54-.66.76-1.24 1.99-1.09 3.16 1.14.09 2.31-.58 3.04-1.43"/></svg><span class="t"><small>Download on the</small><b>App Store</b></span></a>
+          <a class="store" href="#get"><svg viewBox="0 0 24 24" fill="#000"><path d="M17.05 12.04c-.03-2.6 2.12-3.84 2.22-3.9-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.93-.03-.01-2.71-1.04-2.74-4.12-.02-2.58 2.11-3.82 2.21-3.88M14.6 4.5c.71-.87 1.19-2.07 1.06-3.27-1.02.04-2.27.68-3.01 1.54-.66.76-1.24 1.99-1.09 3.16 1.14.09 2.31-.58 3.04-1.43"/></svg><span class="t"><small>Download on the</small><b>App Store</b></span></a>
           <a class="store" href="https://play.google.com/store/apps/details?id=co.ridecast.app"><svg viewBox="0 0 24 24"><path fill="#EA4335" d="M3.6 2.1C3.3 2.4 3.1 2.9 3.1 3.5v17c0 .6.2 1.1.5 1.4l.1.1L13.3 12.6v-.2L3.7 2z"/><path fill="#FBBC04" d="M16.5 15.8l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2z"/><path fill="#34A853" d="M16.6 15.7L13.3 12.4 3.6 22.1c.4.4 1 .4 1.7.1z"/><path fill="#4285F4" d="M3.6 2.1l9.7 9.7 3.3-3.3-11.3-6.5c-.6-.4-1.2-.3-1.7.1"/></svg><span class="t"><small>Get it on</small><b>Google Play</b></span></a>
         </div>
         <a class="link-ghost" href="#how">See how it works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -437,10 +452,99 @@
     <h2>Stop guessing.<br>Start riding smarter.</h2>
     <p class="muted" style="font-size:18px;max-width:480px;margin:0 auto">Get your personalised Ride Score and know what the road has in store before you leave home.</p>
     <div class="badges">
-      <a class="store" href="APPSTORE_URL"><svg viewBox="0 0 24 24" fill="#000"><path d="M17.05 12.04c-.03-2.6 2.12-3.84 2.22-3.9-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.93-.03-.01-2.71-1.04-2.74-4.12-.02-2.58 2.11-3.82 2.21-3.88M14.6 4.5c.71-.87 1.19-2.07 1.06-3.27-1.02.04-2.27.68-3.01 1.54-.66.76-1.24 1.99-1.09 3.16 1.14.09 2.31-.58 3.04-1.43"/></svg><span class="t"><small>Download on the</small><b>App Store</b></span></a>
+      <a class="store" href="#get"><svg viewBox="0 0 24 24" fill="#000"><path d="M17.05 12.04c-.03-2.6 2.12-3.84 2.22-3.9-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.93-.03-.01-2.71-1.04-2.74-4.12-.02-2.58 2.11-3.82 2.21-3.88M14.6 4.5c.71-.87 1.19-2.07 1.06-3.27-1.02.04-2.27.68-3.01 1.54-.66.76-1.24 1.99-1.09 3.16 1.14.09 2.31-.58 3.04-1.43"/></svg><span class="t"><small>Download on the</small><b>App Store</b></span></a>
       <a class="store" href="https://play.google.com/store/apps/details?id=co.ridecast.app"><svg viewBox="0 0 24 24"><path fill="#EA4335" d="M3.6 2.1C3.3 2.4 3.1 2.9 3.1 3.5v17c0 .6.2 1.1.5 1.4l.1.1L13.3 12.6v-.2L3.7 2z"/><path fill="#FBBC04" d="M16.5 15.8l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2z"/><path fill="#34A853" d="M16.6 15.7L13.3 12.4 3.6 22.1c.4.4 1 .4 1.7.1z"/><path fill="#4285F4" d="M3.6 2.1l9.7 9.7 3.3-3.3-11.3-6.5c-.6-.4-1.2-.3-1.7.1"/></svg><span class="t"><small>Get it on</small><b>Google Play</b></span></a>
     </div>
     <p class="subtext">Your weather. Your route. Your ride.</p>
+  </div>
+</section>
+
+<section class="legal" id="privacy">
+  <div class="wrap legal-wrap">
+    <span class="eyebrow">Legal</span>
+    <h2>Privacy Policy</h2>
+    <p class="legal-updated">Last updated: 21 June 2026</p>
+    <p>RideCast (“we”, “our”, or “us”) respects your privacy and is committed to protecting your personal information. This policy explains what the RideCast app collects and why.</p>
+    <h3>Information We Collect</h3>
+    <p>The RideCast app does not require an account and does not ask you to log in. We collect only what’s needed to provide forecasts and notifications:</p>
+    <ul>
+      <li><strong>The location you choose</strong> — the city or route you select in the app. RideCast does not collect precise GPS location. Your selection is used only to fetch relevant weather forecasts.</li>
+      <li><strong>Device notification token</strong> — a technical identifier used to deliver your daily ride notifications.</li>
+      <li><strong>Your settings</strong> — notification times, route details, and rider preferences.</li>
+      <li><strong>Forecast feedback</strong> — if you rate whether a forecast was accurate, that rating is sent to us to improve the service. It is not linked to your identity.</li>
+      <li><strong>Subscription status</strong> — if you purchase Commuter Mode, your subscription state is managed by Apple and RevenueCat. We never see or store your payment details.</li>
+      <li><strong>Email address</strong> — only if you contact us for support or sign up for updates on our website.</li>
+    </ul>
+    <p>Your personal ride log (the days you rode) is stored on your device, not on our servers.</p>
+    <h3>How We Use Your Information</h3>
+    <p>We use this information to:</p>
+    <ul>
+      <li>Deliver ride scores and weather-based insights for the location you choose</li>
+      <li>Send the daily ride notifications you’ve enabled</li>
+      <li>Provide and improve the RideCast service</li>
+      <li>Respond to support requests</li>
+    </ul>
+    <h3>Data Sharing</h3>
+    <p>We do not sell your personal information. We use trusted third-party services only to operate the app:</p>
+    <ul>
+      <li><strong>Open-Meteo</strong> — weather forecast data</li>
+      <li><strong>Expo</strong> — delivery of push notifications</li>
+      <li><strong>RevenueCat and Apple</strong> — subscription management and payments</li>
+    </ul>
+    <p>These services only process data as needed to run RideCast.</p>
+    <h3>Data Storage</h3>
+    <p>Your data is stored using secure, industry-standard practices.</p>
+    <h3>Your Rights</h3>
+    <p>You may request access, correction, or deletion of any personal information we hold at any time.</p>
+    <h3>Contact</h3>
+    <p>For privacy-related questions or requests, contact: <a href="mailto:support@ridecast.co">support@ridecast.co</a></p>
+    <h3>Updates</h3>
+    <p>We may update this Privacy Policy from time to time.</p>
+    <a class="back" href="#top">↑ Back to top</a>
+  </div>
+</section>
+
+<section class="legal" id="terms">
+  <div class="wrap legal-wrap">
+    <span class="eyebrow">Legal</span>
+    <h2>Terms of Use</h2>
+    <p class="legal-updated">Last updated: 30 March 2026</p>
+    <p>By using RideCast, you agree to the following terms:</p>
+    <h3>Use of the Service</h3>
+    <p>RideCast provides weather-based insights to support commuting and riding decisions. The service is provided for informational purposes only.</p>
+    <h3>No Guarantees</h3>
+    <p>We do not guarantee the accuracy, completeness, or reliability of weather data or ride scores. Conditions may change rapidly and external data sources may vary.</p>
+    <h3>Personal Responsibility</h3>
+    <p>You are responsible for your own decisions and safety. RideCast provides guidance only and does not guarantee the suitability or safety of riding conditions. It does not replace your judgment.</p>
+    <h3>Service Availability</h3>
+    <p>We may update, modify, or discontinue RideCast at any time without notice.</p>
+    <h3>Limitation of Liability</h3>
+    <p>To the fullest extent permitted by law, RideCast is not liable for any loss, injury, or damages resulting from the use of the service.</p>
+    <h3>Contact</h3>
+    <p>For questions about these terms, contact: <a href="mailto:support@ridecast.co">support@ridecast.co</a></p>
+    <h3>Updates</h3>
+    <p>We may update these Terms of Use from time to time.</p>
+    <a class="back" href="#top">↑ Back to top</a>
+  </div>
+</section>
+
+<section class="legal" id="support">
+  <div class="wrap legal-wrap">
+    <span class="eyebrow">Help</span>
+    <h2>Support</h2>
+    <p>Need help or have a question? We’re here to help.</p>
+    <h3>Reporting an Issue</h3>
+    <p>If something isn’t working, include:</p>
+    <ul>
+      <li>What happened</li>
+      <li>Your device (iPhone, Android, etc.)</li>
+      <li>Approximate time of the issue</li>
+    </ul>
+    <h3>Response Time</h3>
+    <p>We aim to respond within 24–48 hours.</p>
+    <h3>Contact</h3>
+    <p>For support, email us at <a href="mailto:support@ridecast.co">support@ridecast.co</a></p>
+    <a class="back" href="#top">↑ Back to top</a>
   </div>
 </section>
 
