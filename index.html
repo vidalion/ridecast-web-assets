@@ -571,7 +571,7 @@ try{
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 }catch(e){document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));}
-function openHash(){var h=location.hash.replace('#','');if(!h)return;var el=document.getElementById(h);if(el&&el.tagName==='DETAILS'){el.open=true;setTimeout(function(){el.scrollIntoView();},30);}}
+function openHash(){var h=location.hash.replace('#','');if(!h)return;document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});var el=document.getElementById(h);if(el&&el.tagName==='DETAILS'){el.open=true;}if(el){setTimeout(function(){el.scrollIntoView();},50);}}
 window.addEventListener('hashchange',openHash);openHash();
 </script>
 </body>
