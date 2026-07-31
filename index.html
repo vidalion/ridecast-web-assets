@@ -271,6 +271,8 @@
   .beta-center .beta-row{justify-content:center}
   .final .beta-form{margin:34px auto 0}
   @media(max-width:480px){.beta-row{flex-direction:column}.beta-form button{width:100%}}
+  .klaviyo-embed-wrap{max-width:460px}
+  .klaviyo-embed-center{margin:0 auto}
 
   @media(max-width:860px){
     .hero .wrap,.feat2,.foot-grid{grid-template-columns:1fr}
@@ -285,6 +287,7 @@
     .chip{width:100%}
   }
 </style>
+<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=XAxsbf"></script>
 </head>
 <body>
 
@@ -307,10 +310,7 @@
       <h1>Know before<br><span class="g">you go.</span></h1>
       <p class="sub">RideCast turns the forecast into one simple answer: <b>is it a good time to ride?</b> A personalised Ride Score from the conditions that actually matter — rain, wind, temperature, your route and the times you travel.</p>
       <div class="hero-cta" id="get">
-        <form class="beta-form" data-klaviyo>
-          <div class="beta-row"><input type="email" name="email" placeholder="you@email.com" required aria-label="Email address"><button type="submit">Join the beta</button></div>
-          <p class="form-msg" aria-live="polite"></p>
-        </form>
+        <div class="klaviyo-embed-wrap"><div class="klaviyo-form-UxdJGv"></div></div>
         <a class="link-ghost" href="#how">See how it works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <p class="hero-note">Free during the beta · No spam, ever · Coming soon to iOS &amp; Android.</p>
@@ -511,10 +511,7 @@
     <span class="eyebrow">Ride smarter</span>
     <h2>Stop guessing.<br>Start riding smarter.</h2>
     <p class="muted" style="font-size:18px;max-width:480px;margin:0 auto">Get your personalised Ride Score and know what the road has in store before you leave home.</p>
-    <form class="beta-form beta-center" data-klaviyo>
-      <div class="beta-row"><input type="email" name="email" placeholder="you@email.com" required aria-label="Email address"><button type="submit">Join the beta</button></div>
-      <p class="form-msg" aria-live="polite"></p>
-    </form>
+    <div class="klaviyo-embed-wrap klaviyo-embed-center"><div class="klaviyo-form-UxdJGv"></div></div>
     <p class="subtext">Your weather. Your route. Your ride.</p>
   </div>
 </section>
@@ -612,7 +609,7 @@
         <a class="brand" href="#top" style="margin-bottom:16px;display:inline-flex"><img src="img/wordmark.png" alt="RideCast" style="height:22px"></a>
         <h4>Launching soon.</h4>
         <p>RideCast is almost here. Drop your email to join the beta and be first to ride — plus updates as we reach new countries.</p>
-        <form class="beta-form" data-klaviyo><div class="beta-row"><input type="email" name="email" placeholder="you@email.com" required aria-label="Email address"><button type="submit">Notify me</button></div><p class="form-msg" aria-live="polite"></p></form>
+        <div class="klaviyo-embed-wrap"><div class="klaviyo-form-UxdJGv"></div></div>
       </div>
       <div class="foot-links">
         <div class="foot-col"><h5>Product</h5><a href="#how">How it works</a><a href="#commuter">Commuter Mode</a><a href="#compare">Why RideCast</a><a href="#faq">FAQ</a></div>
@@ -630,26 +627,6 @@ try{
 }catch(e){document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));}
 function openHash(){var h=location.hash.replace('#','');if(!h)return;document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});var el=document.getElementById(h);if(el&&el.tagName==='DETAILS'){el.open=true;}if(el){setTimeout(function(){el.scrollIntoView({block:'start'});},50);}}
 window.addEventListener('hashchange',openHash);openHash();
-document.querySelectorAll('form[data-klaviyo]').forEach(function(f){
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var input=f.querySelector('input[name=email]'),msg=f.querySelector('.form-msg'),btn=f.querySelector('button');
-    var email=(input.value||'').trim();
-    if(!email||email.indexOf('@')<1){if(msg){msg.textContent='Please enter a valid email.';msg.className='form-msg err';}return;}
-    var label=btn.textContent;btn.disabled=true;btn.textContent='Joining…';
-    var payload={data:{type:'subscription',attributes:{custom_source:'ridecast.co beta signup',profile:{data:{type:'profile',attributes:{email:email}}}},relationships:{list:{data:{type:'list',id:'YtsvMx'}}}}};
-    fetch('https://a.klaviyo.com/client/subscriptions/?company_id=XAxsbf',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-      .then(function(r){
-        if(r.status===202||r.ok){if(msg){msg.textContent="You're on the list — we'll email you at launch.";msg.className='form-msg ok';}f.reset();return;}
-        return r.json().catch(function(){return null;}).then(function(d){
-          var detail=d&&d.errors&&d.errors[0]&&(d.errors[0].detail||d.errors[0].title);
-          if(msg){msg.textContent=detail||'Something went wrong — please try again.';msg.className='form-msg err';}
-        });
-      })
-      .catch(function(){if(msg){msg.textContent='Something went wrong — please try again or email support@ridecast.co.';msg.className='form-msg err';}})
-      .finally(function(){btn.disabled=false;btn.textContent=label;});
-  });
-});
 </script>
 </body>
 </html>
