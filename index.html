@@ -637,11 +637,16 @@ document.querySelectorAll('form[data-klaviyo]').forEach(function(f){
     var email=(input.value||'').trim();
     if(!email||email.indexOf('@')<1){if(msg){msg.textContent='Please enter a valid email.';msg.className='form-msg err';}return;}
     var label=btn.textContent;btn.disabled=true;btn.textContent='Joining…';
-    var body=new URLSearchParams();body.append('g','YtsvMx');body.append('email',email);body.append('$fields','$source');body.append('$source','ridecast.co beta');
-    fetch('https://manage.kmail-lists.com/ajax/subscriptions/subscribe',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()})
-      .then(function(r){return r.json().catch(function(){return{success:true,errors:[]};});})
-      .then(function(d){var err=d&&d.errors&&d.errors.length;if(msg){msg.textContent=err?d.errors[0]:"You're on the list — we'll email you at launch.";msg.className=err?'form-msg err':'form-msg ok';}if(!err)f.reset();})
-      .catch(function(){if(msg){msg.textContent="Thanks — you're on the list.";msg.className='form-msg ok';}f.reset();})
+    var payload={data:{type:'subscription',attributes:{custom_source:'ridecast.co beta signup',profile:{data:{type:'profile',attributes:{email:email}}}},relationships:{list:{data:{type:'list',id:'YtsvMx'}}}}};
+    fetch('https://a.klaviyo.com/client/subscriptions/?company_id=XAxsbf',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+      .then(function(r){
+        if(r.status===202||r.ok){if(msg){msg.textContent="You're on the list — we'll email you at launch.";msg.className='form-msg ok';}f.reset();return;}
+        return r.json().catch(function(){return null;}).then(function(d){
+          var detail=d&&d.errors&&d.errors[0]&&(d.errors[0].detail||d.errors[0].title);
+          if(msg){msg.textContent=detail||'Something went wrong — please try again.';msg.className='form-msg err';}
+        });
+      })
+      .catch(function(){if(msg){msg.textContent='Something went wrong — please try again or email support@ridecast.co.';msg.className='form-msg err';}})
       .finally(function(){btn.disabled=false;btn.textContent=label;});
   });
 });
