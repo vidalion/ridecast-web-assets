@@ -477,10 +477,9 @@ input[type=range]{height:24px}
   .how,.try,.tour,.bento,.pricing,.faq{padding:44px 0}
   .morning{padding:48px 0 8px}
   /* swipe rows */
-  .steps,.bgrid,.tour-grid>div:last-child{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 calc(-1*var(--gut));padding:2px var(--gut) 10px;scrollbar-width:none;scroll-padding:0 var(--gut)}
-  .steps::-webkit-scrollbar,.bgrid::-webkit-scrollbar,.tour-grid>div:last-child::-webkit-scrollbar{display:none}
-  .step,.cell{flex:0 0 82%;scroll-snap-align:start}
-  .bgrid{align-items:flex-start}
+  .steps,.tour-grid>div:last-child{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 calc(-1*var(--gut));padding:2px var(--gut) 10px;scrollbar-width:none;scroll-padding:0 var(--gut)}
+  .steps::-webkit-scrollbar,.tour-grid>div:last-child::-webkit-scrollbar{display:none}
+  .step{flex:0 0 82%;scroll-snap-align:start}
   .hero{padding-top:22px}
   .step{padding:18px}
   .step .num{font-size:40px}
@@ -494,7 +493,7 @@ input[type=range]{height:24px}
   .tour-grid>div:last-child{margin-top:8px}
   .tstep{flex:0 0 74%;scroll-snap-align:start;min-height:0;padding:0;border:0;opacity:1;display:flex;flex-direction:column;justify-content:flex-start}
   .tstep .mini{order:-1;margin:0 0 16px}
-  .tstep .mini .phone{--w:100%;max-width:230px;margin:0}
+  .tstep .mini .phone{--w:min(230px,62vw);margin:0}
   .tstep .tile{display:none}
   .tstep .mono{margin-bottom:6px}
   .tstep h3{font-size:22px;margin-bottom:6px}
@@ -571,6 +570,51 @@ input[type=range]{height:24px}
   footer .wrap{flex-direction:column;align-items:flex-start;gap:12px}
 }
 
+
+/* ===== round 3 ===== */
+.logo img.wm{width:auto;height:24px;border-radius:0}
+.avail{display:inline-flex;align-items:center;gap:12px;padding:6px 8px 6px 6px;background:#fff;border:1px solid var(--line);border-radius:18px;text-decoration:none;box-shadow:0 8px 20px -14px rgba(11,18,32,.35);transition:transform .2s,box-shadow .2s}
+.avail:hover{transform:translateY(-1px);box-shadow:0 12px 24px -14px rgba(11,18,32,.45)}
+.avail img{width:36px;height:36px;border-radius:10px}
+.avail b{display:block;font-size:15px;letter-spacing:-.01em;line-height:1.2}
+.avail small{display:block;font-size:12.5px;color:var(--mute);line-height:1.25}
+.avail .plats{display:flex;gap:4px;margin-left:4px;padding-left:12px;border-left:1px solid var(--line)}
+.avail .plats span{width:32px;height:32px;border-radius:10px;background:var(--paper);display:grid;place-items:center;color:var(--ink)}
+.avail .plats span:last-child{color:#2FA866}
+.avail .plats svg{width:17px;height:17px}
+.perks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 22px;margin-top:30px;padding-top:24px;border-top:1px solid var(--line);max-width:540px}
+.perks div{display:flex;gap:12px;align-items:center}
+.perks p{margin:0}
+.pt{width:42px;height:42px;border-radius:13px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--blue);flex:none;box-shadow:0 4px 10px -8px rgba(11,18,32,.3)}
+.pt .ico{width:21px;height:21px}
+.perks b{display:block;font-size:15.5px;line-height:1.2;letter-spacing:-.01em}
+.perks small{display:block;font-size:13px;color:var(--mute);line-height:1.3;margin-top:2px}
+.how{padding-top:clamp(64px,8vw,110px)}
+@media (max-width:900px){
+  .logo img.wm{height:21px}
+  .avail{padding:5px 6px 5px 5px;gap:10px;border-radius:16px}
+  .avail img{width:32px;height:32px}
+  .avail b{font-size:14px}.avail small{font-size:11.5px}
+  .avail .plats{padding-left:8px;margin-left:0}.avail .plats span{width:28px;height:28px}
+  .perks{gap:14px 10px;margin-top:22px;padding-top:18px}
+  .pt{width:36px;height:36px;border-radius:11px}.pt .ico{width:19px;height:19px}
+  .perks b{font-size:14px}.perks small{font-size:12px}
+  .perks div{gap:10px}
+  .how{padding-top:52px}
+  .bgrid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:20px}
+  .cell{padding:18px 18px 16px}
+  .cell h3{margin-bottom:4px}
+  .swap{margin:14px 0 2px}
+  .week{margin:14px 0 12px}
+  .hexes{margin:12px 0 0}
+  .c-priv{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}
+  .c-priv .tile{margin:0;grid-row:span 1}
+  .c-priv h3{margin:0}
+  .c-priv ul{grid-column:1/3;margin-top:12px;gap:8px}
+  .tstep .mono{margin-top:2px}
+}
+@media (max-width:380px){.avail .plats{display:none}}
+
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.chip,.notif{opacity:1;transform:none}}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
 </style>
@@ -608,11 +652,11 @@ input[type=range]{height:24px}
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="RideCast home"><img src="img/v2/icon-512.png" alt="" width="34" height="34">RideCast</a>
+    <a class="logo" href="#top" aria-label="RideCast home"><img class="wm" src="img/v3/wordmark-ink.png" alt="RideCast" width="126" height="24"></a>
     <nav aria-label="Main"><ul>
       <li><a href="#how">How it works</a></li>
-      <li><a href="#try">Try it</a></li>
       <li><a href="#commuter">Commuter Mode</a></li>
+      <li><a href="#try">Try it</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul></nav>
@@ -625,15 +669,15 @@ input[type=range]{height:24px}
 <section class="hero">
   <div class="wrap">
     <div>
-      <span class="live rv"><i></i>Free on iPhone &amp; Android</span>
+      <a class="avail rv" href="#download"><img src="img/v2/icon-512.png" alt="" width="34" height="34"><span><b>Free on iPhone &amp; Android</b><small>Ride weather, scored for you</small></span><span class="plats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 12.04c-.03-2.6 2.12-3.84 2.22-3.9-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.93-.03-.01-2.71-1.04-2.74-4.12-.02-2.58 2.11-3.82 2.21-3.88M14.6 4.5c.71-.87 1.19-2.07 1.06-3.27-1.02.04-2.27.68-3.01 1.54-.66.76-1.24 1.99-1.09 3.16 1.14.09 2.31-.58 3.04-1.43"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 18.5V10h12v8.5a1.5 1.5 0 0 1-1.5 1.5H16v2.25a1.25 1.25 0 0 1-2.5 0V20h-3v2.25a1.25 1.25 0 0 1-2.5 0V20h-.5A1.5 1.5 0 0 1 6 18.5zM3.75 10a1.25 1.25 0 0 1 2.5 0v5a1.25 1.25 0 0 1-2.5 0zm14 0a1.25 1.25 0 0 1 2.5 0v5a1.25 1.25 0 0 1-2.5 0zM6.1 9a6 6 0 0 1 3.1-4.6l-.9-1.6a.4.4 0 0 1 .7-.4l.93 1.65a6.1 6.1 0 0 1 4.14 0l.93-1.65a.4.4 0 0 1 .7.4l-.9 1.6A6 6 0 0 1 17.9 9zm3.4-2.25a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zm5 0a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5z"/></svg></span></span></a>
       <h1 class="rv d1">Should you ride <span class="it">today?</span></h1>
       <p class="lede rv d2">RideCast reads the forecast like a rider. Wind, gusts, rain and how it really feels, checked against your own limits and turned into one score and one clear answer.</p>
       <div class="badges rv d3"><a class="store" href="https://apps.apple.com/nz/app/ridecast-ride-smarter/id6762062579"><svg viewBox="0 0 24 24" fill="#000"><path d="M17.05 12.04c-.03-2.6 2.12-3.84 2.22-3.9-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.93-.03-.01-2.71-1.04-2.74-4.12-.02-2.58 2.11-3.82 2.21-3.88M14.6 4.5c.71-.87 1.19-2.07 1.06-3.27-1.02.04-2.27.68-3.01 1.54-.66.76-1.24 1.99-1.09 3.16 1.14.09 2.31-.58 3.04-1.43"/></svg><span class="t"><small>Download on the</small><b>App Store</b></span></a><a class="store" href="https://play.google.com/store/apps/details?id=co.ridecast.app"><svg viewBox="0 0 24 24"><path fill="#EA4335" d="M3.6 2.1C3.3 2.4 3.1 2.9 3.1 3.5v17c0 .6.2 1.1.5 1.4l.1.1L13.3 12.6v-.2L3.7 2z"/><path fill="#FBBC04" d="M16.5 15.8l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2z"/><path fill="#34A853" d="M16.6 15.7L13.3 12.4 3.6 22.1c.4.4 1 .4 1.7.1z"/><path fill="#4285F4" d="M3.6 2.1l9.7 9.7 3.3-3.3-11.3-6.5c-.6-.4-1.2-.3-1.7.1"/></svg><span class="t"><small>Get it on</small><b>Google Play</b></span></a></div>
-      <div class="readout mono rv d3">
-        <span><svg class="ico"><use href="#i-bike"/></svg>Cyclists</span>
-        <span><svg class="ico"><use href="#i-moto"/></svg>Motorbike riders</span>
-        <span><svg class="ico"><use href="#i-user-off"/></svg>No account</span>
-        <span><svg class="ico"><use href="#i-ad-off"/></svg>No ads</span>
+      <div class="perks rv d3">
+        <div><span class="pt"><svg class="ico"><use href="#i-bike"/></svg></span><p><b>Bike or motorbike</b><small>Scored for how you ride</small></p></div>
+        <div><span class="pt"><svg class="ico"><use href="#i-pin"/></svg></span><p><b>Built for NZ weather</b><small>Any town or city</small></p></div>
+        <div><span class="pt"><svg class="ico"><use href="#i-user-off"/></svg></span><p><b>No account</b><small>Open it and go</small></p></div>
+        <div><span class="pt"><svg class="ico"><use href="#i-ad-off"/></svg></span><p><b>No ads</b><small>Not now, not ever</small></p></div>
       </div>
     </div>
     <div class="stage rv" id="stage">
@@ -658,16 +702,7 @@ input[type=range]{height:24px}
   </div>
 </section>
 
-<div class="ticker" aria-hidden="true"><div class="row" id="tick">
-  <span><svg class="ico"><use href="#i-wind"/></svg>Wind 9 km/h <em>· under limit</em></span>
-  <span><svg class="ico"><use href="#i-gust"/></svg>Gusts 25 km/h <em>· light</em></span>
-  <span><svg class="ico"><use href="#i-drop"/></svg>Rain 0% <em>· dry</em></span>
-  <span><svg class="ico"><use href="#i-thermo"/></svg>Feels 15° <em>· mild</em></span>
-  <span><svg class="ico"><use href="#i-route"/></svg>Tailwind in <em>· +6</em></span>
-  <span><svg class="ico"><use href="#i-route"/></svg>Headwind home <em>· −4</em></span>
-  <span><svg class="ico"><use href="#i-clock"/></svg>Leave by 4:30 <em>· rain from 5pm</em></span>
-  <span><svg class="ico"><use href="#i-jacket"/></svg>Light jacket <em>· for the ride home</em></span>
-</div></div>
+
 
 <!-- HOW -->
 <section class="how" id="how">
@@ -703,6 +738,52 @@ input[type=range]{height:24px}
         <h3>You get one clear answer</h3>
         <p>A score out of 100 and a verdict: go ride, rideable, or stay in. Plus the reasons, so you can trust it.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUTER -->
+<section class="commute" id="commuter">
+  <div class="wrap cgrid">
+    <div>
+      <span class="kick rv">Commuter Mode</span>
+      <h2 class="rv d1" style="margin:18px 0 22px">Same wind. <span class="it">Two</span> different rides.</h2>
+      <p class="lede rv d2">Save your route and RideCast scores both rides, in and home, with the wind direction counted. A tailwind lifts your score. A headwind drops it.</p>
+      <ul class="list rv d2">
+        <li><span class="tile"><svg class="ico"><use href="#i-route"/></svg></span>Separate scores for your ride in and your ride home</li>
+        <li><span class="tile"><svg class="ico"><use href="#i-clock"/></svg></span>The best time to leave, morning and evening</li>
+        <li><span class="tile"><svg class="ico"><use href="#i-drop"/></svg></span>A heads-up when rain is due before you get home</li>
+        <li><span class="tile"><svg class="ico"><use href="#i-jacket"/></svg></span>What to wear for each ride, in one morning notification</li>
+      </ul>
+      <div class="badges on-dark rv d3"><a class="store" href="https://apps.apple.com/nz/app/ridecast-ride-smarter/id6762062579"><svg viewBox="0 0 24 24" fill="#000"><path d="M17.05 12.04c-.03-2.6 2.12-3.84 2.22-3.9-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.93-.03-.01-2.71-1.04-2.74-4.12-.02-2.58 2.11-3.82 2.21-3.88M14.6 4.5c.71-.87 1.19-2.07 1.06-3.27-1.02.04-2.27.68-3.01 1.54-.66.76-1.24 1.99-1.09 3.16 1.14.09 2.31-.58 3.04-1.43"/></svg><span class="t"><small>Download on the</small><b>App Store</b></span></a><a class="store" href="https://play.google.com/store/apps/details?id=co.ridecast.app"><svg viewBox="0 0 24 24"><path fill="#EA4335" d="M3.6 2.1C3.3 2.4 3.1 2.9 3.1 3.5v17c0 .6.2 1.1.5 1.4l.1.1L13.3 12.6v-.2L3.7 2z"/><path fill="#FBBC04" d="M16.5 15.8l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2z"/><path fill="#34A853" d="M16.6 15.7L13.3 12.4 3.6 22.1c.4.4 1 .4 1.7.1z"/><path fill="#4285F4" d="M3.6 2.1l9.7 9.7 3.3-3.3-11.3-6.5c-.6-.4-1.2-.3-1.7.1"/></svg><span class="t"><small>Get it on</small><b>Google Play</b></span></a></div>
+    </div>
+    <div class="map-card rv d1">
+      <div class="legtabs" role="group" aria-label="Choose a ride">
+        <button type="button" data-leg="in" aria-pressed="true"><svg class="ico"><use href="#i-work"/></svg>Ride in · 7am</button>
+        <button type="button" data-leg="home" aria-pressed="false"><svg class="ico"><use href="#i-home"/></svg>Ride home · 4pm</button>
+      </div>
+      <div class="map">
+        <svg viewBox="0 0 600 360" aria-hidden="true">
+          <rect width="600" height="360" fill="#EEF3FB"/>
+          <path d="M0 300 C 120 270, 220 320, 330 290 S 520 250, 600 270 V360 H0z" fill="#D9E6FB"/>
+          <g fill="#fff"><rect x="40" y="30" width="110" height="70" rx="14"/><rect x="170" y="30" width="90" height="70" rx="14"/><rect x="360" y="30" width="110" height="70" rx="14" fill="#DDF3E4"/><rect x="40" y="120" width="70" height="44" rx="12"/><rect x="380" y="130" width="140" height="56" rx="14"/><rect x="420" y="210" width="90" height="40" rx="12"/></g>
+          <path d="M0 110 H600 M300 0 V360 M490 0 V250" stroke="#fff" stroke-width="12"/>
+          <g class="wind">
+            <path d="M40 250 L 560 60"/><path d="M-10 200 L 520 10"/><path d="M90 330 L 600 140"/><path d="M200 340 L 600 200"/><path d="M-20 130 L 380 -20"/>
+          </g>
+          <path id="routeP" d="M140 270 C 210 220, 250 190, 330 185 S 430 160, 470 120 S 530 75, 548 72" fill="none" stroke="#BFD3FA" stroke-width="16" stroke-linecap="round"/>
+          <path d="M140 270 C 210 220, 250 190, 330 185 S 430 160, 470 120 S 530 75, 548 72" fill="none" stroke="#2563EB" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 12" id="routeDash"/>
+          <g transform="translate(140 270)"><circle r="17" fill="#2563EB"/><path d="M-7 1 0-6l7 7v6h-14z" fill="#fff"/></g>
+          <g transform="translate(548 72)"><circle r="17" fill="#0B1220"/><rect x="-6" y="-6" width="12" height="12" rx="2" fill="#fff"/></g>
+          <g id="rider"><circle r="13" fill="#fff" stroke="#2563EB" stroke-width="3"/><circle r="5" fill="#2563EB"/></g>
+          <g font-family="Bricolage, sans-serif" font-weight="700" font-size="17" fill="#0B1220"><text x="96" y="318">Home</text><text x="505" y="44">Work</text></g>
+        </svg>
+        <span class="wlabel"><svg class="ico w-anim"><use href="#i-wind"/></svg>Wind 22 km/h from SW</span>
+      </div>
+      <div class="leg go" id="legCard">
+        <div class="ring" style="--p:92"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="45"/><circle class="fg" cx="50" cy="50" r="45"/></svg><div class="val"><div><b id="legN">92</b></div></div></div>
+        <div><span class="tag" id="legTag">RIDE IN · GO</span><h4 id="legH">Leave at 7am</h4><p id="legP">Tailwind +6 pts · dry all morning</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -791,52 +872,6 @@ input[type=range]{height:24px}
           <p>Log your rides in a tap, tell us if the forecast was right, build streaks and earn 50 badges along the way.</p>
           <div class="mini"><div class="phone"><div class="scr"><div class="sbar"><span>9:41</span><i class="isl"></i><span class="sic"><svg viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx=".7" fill="currentColor"/><rect x="4.5" y="5" width="3" height="6" rx=".7" fill="currentColor"/><rect x="9" y="2.5" width="3" height="8.5" rx=".7" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx=".7" fill="currentColor"/></svg><svg viewBox="0 0 15 11"><path d="M7.5 2.2c2 0 3.9.8 5.3 2.1l1.1-1.2A9.2 9.2 0 0 0 7.5.5 9.2 9.2 0 0 0 1.1 3.1l1.1 1.2a7.6 7.6 0 0 1 5.3-2.1zm0 3.3c1.1 0 2.2.4 3 1.2l1.1-1.2a5.9 5.9 0 0 0-8.2 0l1.1 1.2c.8-.8 1.9-1.2 3-1.2zm0 3.3c-.5 0-1 .2-1.3.5l1.3 1.4 1.3-1.4c-.3-.3-.8-.5-1.3-.5z" fill="currentColor"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="2" fill="currentColor"/><path d="M23 4v4c.8-.3 1.3-1.1 1.3-2S23.8 4.3 23 4z" fill="currentColor" opacity=".45"/></svg></span></div><img src="img/v3/rides.jpg" width="780" height="1585" alt="Ride log with 19 rides" loading="lazy"></div></div></div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMMUTER -->
-<section class="commute" id="commuter">
-  <div class="wrap cgrid">
-    <div>
-      <span class="kick rv">Commuter Mode</span>
-      <h2 class="rv d1" style="margin:18px 0 22px">Same wind. <span class="it">Two</span> different rides.</h2>
-      <p class="lede rv d2">Save your route and RideCast scores both rides, in and home, with the wind direction counted. A tailwind lifts your score. A headwind drops it.</p>
-      <ul class="list rv d2">
-        <li><span class="tile"><svg class="ico"><use href="#i-route"/></svg></span>Separate scores for your ride in and your ride home</li>
-        <li><span class="tile"><svg class="ico"><use href="#i-clock"/></svg></span>The best time to leave, morning and evening</li>
-        <li><span class="tile"><svg class="ico"><use href="#i-drop"/></svg></span>A heads-up when rain is due before you get home</li>
-        <li><span class="tile"><svg class="ico"><use href="#i-jacket"/></svg></span>What to wear for each ride, in one morning notification</li>
-      </ul>
-      <div class="badges on-dark rv d3"><a class="store" href="https://apps.apple.com/nz/app/ridecast-ride-smarter/id6762062579"><svg viewBox="0 0 24 24" fill="#000"><path d="M17.05 12.04c-.03-2.6 2.12-3.84 2.22-3.9-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.93-.03-.01-2.71-1.04-2.74-4.12-.02-2.58 2.11-3.82 2.21-3.88M14.6 4.5c.71-.87 1.19-2.07 1.06-3.27-1.02.04-2.27.68-3.01 1.54-.66.76-1.24 1.99-1.09 3.16 1.14.09 2.31-.58 3.04-1.43"/></svg><span class="t"><small>Download on the</small><b>App Store</b></span></a><a class="store" href="https://play.google.com/store/apps/details?id=co.ridecast.app"><svg viewBox="0 0 24 24"><path fill="#EA4335" d="M3.6 2.1C3.3 2.4 3.1 2.9 3.1 3.5v17c0 .6.2 1.1.5 1.4l.1.1L13.3 12.6v-.2L3.7 2z"/><path fill="#FBBC04" d="M16.5 15.8l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2z"/><path fill="#34A853" d="M16.6 15.7L13.3 12.4 3.6 22.1c.4.4 1 .4 1.7.1z"/><path fill="#4285F4" d="M3.6 2.1l9.7 9.7 3.3-3.3-11.3-6.5c-.6-.4-1.2-.3-1.7.1"/></svg><span class="t"><small>Get it on</small><b>Google Play</b></span></a></div>
-    </div>
-    <div class="map-card rv d1">
-      <div class="legtabs" role="group" aria-label="Choose a ride">
-        <button type="button" data-leg="in" aria-pressed="true"><svg class="ico"><use href="#i-work"/></svg>Ride in · 7am</button>
-        <button type="button" data-leg="home" aria-pressed="false"><svg class="ico"><use href="#i-home"/></svg>Ride home · 4pm</button>
-      </div>
-      <div class="map">
-        <svg viewBox="0 0 600 360" aria-hidden="true">
-          <rect width="600" height="360" fill="#EEF3FB"/>
-          <path d="M0 300 C 120 270, 220 320, 330 290 S 520 250, 600 270 V360 H0z" fill="#D9E6FB"/>
-          <g fill="#fff"><rect x="40" y="30" width="110" height="70" rx="14"/><rect x="170" y="30" width="90" height="70" rx="14"/><rect x="360" y="30" width="110" height="70" rx="14" fill="#DDF3E4"/><rect x="40" y="120" width="70" height="44" rx="12"/><rect x="380" y="130" width="140" height="56" rx="14"/><rect x="420" y="210" width="90" height="40" rx="12"/></g>
-          <path d="M0 110 H600 M300 0 V360 M490 0 V250" stroke="#fff" stroke-width="12"/>
-          <g class="wind">
-            <path d="M40 250 L 560 60"/><path d="M-10 200 L 520 10"/><path d="M90 330 L 600 140"/><path d="M200 340 L 600 200"/><path d="M-20 130 L 380 -20"/>
-          </g>
-          <path id="routeP" d="M140 270 C 210 220, 250 190, 330 185 S 430 160, 470 120 S 530 75, 548 72" fill="none" stroke="#BFD3FA" stroke-width="16" stroke-linecap="round"/>
-          <path d="M140 270 C 210 220, 250 190, 330 185 S 430 160, 470 120 S 530 75, 548 72" fill="none" stroke="#2563EB" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 12" id="routeDash"/>
-          <g transform="translate(140 270)"><circle r="17" fill="#2563EB"/><path d="M-7 1 0-6l7 7v6h-14z" fill="#fff"/></g>
-          <g transform="translate(548 72)"><circle r="17" fill="#0B1220"/><rect x="-6" y="-6" width="12" height="12" rx="2" fill="#fff"/></g>
-          <g id="rider"><circle r="13" fill="#fff" stroke="#2563EB" stroke-width="3"/><circle r="5" fill="#2563EB"/></g>
-          <g font-family="Bricolage, sans-serif" font-weight="700" font-size="17" fill="#0B1220"><text x="96" y="318">Home</text><text x="505" y="44">Work</text></g>
-        </svg>
-        <span class="wlabel"><svg class="ico w-anim"><use href="#i-wind"/></svg>Wind 22 km/h from SW</span>
-      </div>
-      <div class="leg go" id="legCard">
-        <div class="ring" style="--p:92"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="45"/><circle class="fg" cx="50" cy="50" r="45"/></svg><div class="val"><div><b id="legN">92</b></div></div></div>
-        <div><span class="tag" id="legTag">RIDE IN · GO</span><h4 id="legH">Leave at 7am</h4><p id="legP">Tailwind +6 pts · dry all morning</p></div>
       </div>
     </div>
   </div>
@@ -1065,7 +1100,7 @@ input[type=range]{height:24px}
 
 <footer>
   <div class="wrap">
-    <a class="logo" href="#top"><img src="img/v2/icon-512.png" alt="" width="28" height="28" style="width:28px;height:28px">RideCast</a>
+    <a class="logo" href="#top" aria-label="RideCast home"><img class="wm" src="img/v3/wordmark-ink.png" alt="RideCast" width="105" height="20" style="height:20px"></a>
     <nav aria-label="Footer"><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#support">Support</a><a href="mailto:support@ridecast.co">support@ridecast.co</a></nav>
     <span>© 2026 Vida Group Limited · Made in Aotearoa</span>
   </div>
