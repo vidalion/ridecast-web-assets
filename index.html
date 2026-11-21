@@ -418,6 +418,159 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:2
 footer nav{display:flex;gap:18px;flex-wrap:wrap}
 footer a{text-decoration:none}footer a:hover{color:var(--ink)}
 
+
+/* ================= compact pass ================= */
+h2{font-size:clamp(34px,5vw,66px)}
+.sec-head{margin-bottom:34px;gap:28px}
+.how{padding:clamp(56px,7vw,96px) 0 20px}
+.try{padding:clamp(48px,6vw,88px) 0}
+.tour{padding:clamp(40px,5vw,72px) 0}
+.tour-grid{margin-top:16px}
+.tstep{min-height:50svh}
+.commute{padding:clamp(48px,6.5vw,92px) 0}
+.morning{padding:clamp(56px,7vw,100px) 0 20px}
+.bento{padding:clamp(48px,6vw,90px) 0}
+.bgrid{margin-top:32px}
+.pricing{padding:clamp(48px,6vw,88px) 0}
+.faq{padding:clamp(40px,5vw,72px) 0}
+.final{padding:clamp(56px,7.5vw,110px) var(--gut)}
+.final h2{font-size:clamp(50px,8vw,118px)}
+.step{min-height:0;padding:22px}
+.step h3{margin-top:0;font-size:25px}
+.viz{height:160px;margin:16px 0 18px}
+.step .num{font-size:52px}
+.lock{aspect-ratio:4/3.7}
+.facts{margin-top:24px}
+/* try it: smaller */
+.lab{margin-top:24px;gap:14px}
+.panel{padding:clamp(18px,2.4vw,28px)}
+.seg{margin-bottom:14px}
+.ctl{padding:10px 0;gap:2px 12px;grid-template-columns:38px 1fr auto}
+.ctl .tile{width:38px;height:38px;border-radius:12px}
+.ctl .tile .ico{width:20px;height:20px}
+.ctl label{font-size:15.5px}
+input[type=range]{height:24px}
+.result .ring{width:150px;height:150px;margin:6px 0 12px}
+.result .ring .val b{font-size:50px}
+.result h3{font-size:22px;margin:12px 0 4px;min-height:0}
+.why{grid-template-columns:1fr 1fr;margin-top:12px;gap:6px}
+.why div{padding:8px 10px;font-size:14px;gap:8px}
+.why em{font-size:10.5px;padding:3px 7px}
+.fine{margin-top:10px;font-size:12.5px}
+.lim{display:none}
+.snap::-webkit-scrollbar{display:none}
+
+@media (max-width:900px){
+  body{font-size:17px}
+  h2{font-size:clamp(32px,9vw,42px)}
+  .lede{font-size:16.5px}
+  .sec-head{margin-bottom:22px;gap:12px}
+  .kick{font-size:11.5px}
+  .hero{padding:12px 0 24px}
+  .hero h1{font-size:clamp(50px,14vw,64px);margin:18px 0 16px}
+  .hero .lede{margin-bottom:22px}
+  .readout{margin-top:20px;padding-top:16px;font-size:11px;gap:6px 16px}
+  .stage{padding:32px 12px 18px;border-radius:30px;gap:10px}
+  .stage .phone{--w:220px;margin-bottom:8px}
+  .chip.c2,.chip.c3{display:none}
+  .ticker{padding:11px 0}
+  .how,.try,.tour,.bento,.pricing,.faq{padding:44px 0}
+  .morning{padding:48px 0 8px}
+  /* swipe rows */
+  .steps,.bgrid,.tour-grid>div:last-child{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 calc(-1*var(--gut));padding:2px var(--gut) 10px;scrollbar-width:none;scroll-padding:0 var(--gut)}
+  .steps::-webkit-scrollbar,.bgrid::-webkit-scrollbar,.tour-grid>div:last-child::-webkit-scrollbar{display:none}
+  .step,.cell{flex:0 0 82%;scroll-snap-align:start}
+  .bgrid{align-items:flex-start}
+  .hero{padding-top:22px}
+  .step{padding:18px}
+  .step .num{font-size:40px}
+  .step h3{font-size:21px}
+  .step p,.cell p{font-size:15px}
+  .viz{height:132px;margin:12px 0 14px}
+  .feed div{padding:6px 10px;font-size:13px}
+  .bars{gap:10px}
+  .ring{width:118px;height:118px}
+  /* tour as swipe row */
+  .tour-grid>div:last-child{margin-top:8px}
+  .tstep{flex:0 0 74%;scroll-snap-align:start;min-height:0;padding:0;border:0;opacity:1;display:flex;flex-direction:column;justify-content:flex-start}
+  .tstep .mini{order:-1;margin:0 0 16px}
+  .tstep .mini .phone{--w:100%;max-width:230px;margin:0}
+  .tstep .tile{display:none}
+  .tstep .mono{margin-bottom:6px}
+  .tstep h3{font-size:22px;margin-bottom:6px}
+  .tstep p{font-size:15px}
+  /* try it: sticky compact score bar */
+  .lab{gap:10px}
+  .result{position:sticky;top:76px;z-index:5;flex-direction:row;align-items:center;text-align:left;gap:14px;padding:12px 16px;box-shadow:0 14px 30px -18px rgba(11,18,32,.35)}
+  .result>.mono,.result .why,.result .fine{display:none}
+  .result .ring{width:68px;height:68px;margin:0;flex:none}
+  .result .ring circle{stroke-width:12}
+  .result .ring .val b{font-size:24px}
+  .result .verdict{font-size:11px;padding:5px 10px;order:3;margin-left:auto;align-self:center;white-space:nowrap}
+  .result h3{font-size:16px;margin:0;line-height:1.25}
+  .panel{padding:16px}
+  .seg{margin-bottom:6px}.seg button{padding:8px 13px;font-size:14px}
+  .ctl{padding:8px 0;grid-template-columns:34px 1fr auto}
+  .ctl .tile{width:34px;height:34px;border-radius:11px}
+  .ctl .hint{display:none}
+  .ctl output{font-size:13.5px}
+  .lim{display:inline;color:var(--mute)}
+  .fine.m{display:block}
+  /* commuter */
+  .commute{padding:48px 0;border-radius:28px}
+  .cgrid{gap:24px}
+  .commute h2{margin:12px 0 14px!important}
+  .list{margin:18px 0 0;gap:10px}
+  .list li{font-size:15px;align-items:center}
+  .list .tile{width:32px;height:32px}
+  .commute .badges{display:none}
+  .map-card{padding:10px;border-radius:24px}
+  .legtabs button{font-size:13.5px;padding:8px}
+  .leg{padding:12px 14px;gap:12px;margin-top:10px}
+  .leg .ring{width:54px;height:54px}.leg .ring .val b{font-size:18px}
+  .leg h4{font-size:18px;margin:4px 0 0}.leg p{font-size:13px}
+  .wlabel{font-size:10px;right:8px;bottom:8px}
+  /* morning */
+  .mgrid{gap:24px}
+  .lock{padding:28px 14px 20px;border-radius:28px}
+  .lock .time{font-size:64px;margin-bottom:14px}
+  .notif{padding:11px;border-radius:18px;gap:10px}.notif p{font-size:13.5px}.notif img{width:34px;height:34px}
+  .morning h2{margin:12px 0 12px!important}
+  .facts{grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
+  .fact{padding:12px;border-radius:16px}.fact b{font-size:14.5px}.fact span{font-size:12.5px;display:block;line-height:1.35}
+  .fact .ico{width:20px;height:20px;margin-bottom:6px}
+  /* bento */
+  .cell{padding:18px}
+  .cell h3{font-size:21px}
+  .swap{margin:14px 0 4px;gap:16px}.swap .big{width:76px;height:76px;border-radius:22px}.swap .big .ico{width:42px;height:42px}
+  .limits{font-size:12px}
+  .week{margin:14px 0;gap:5px}
+  .hexes{margin:14px 0 4px;gap:8px}.hex{width:52px;height:58px}
+  .c-priv .tile{margin-bottom:12px;width:44px;height:44px}
+  /* pricing */
+  .sec-head .cur{margin-top:4px}
+  .pricing .sec-head>div:last-child{justify-self:start!important}
+  .plans{gap:12px;margin-top:16px}
+  .plan{padding:20px;border-radius:24px}
+  .price{margin:6px 0 2px}.price b{font-size:46px}
+  .opts{gap:6px;margin:14px 0 0}.opt{padding:9px 10px;border-radius:12px}.opt b{font-size:15.5px}.opt span{font-size:9.5px}.opt i{font-size:11px}
+  .feats{gap:8px;margin:16px 0 18px}.feats li{font-size:15px}
+  .plan.free .feats{margin:14px 0 18px}
+  /* faq + final */
+  .fgrid{gap:10px}
+  .q summary{padding:16px 0;font-size:16.5px}
+  .q summary .pl{width:30px;height:30px}
+  .q p{font-size:15.5px;padding-bottom:18px}
+  .final{padding:52px 18px;border-radius:28px}
+  .final h2{font-size:clamp(46px,13vw,60px)}
+  .final p{font-size:16.5px;margin:14px auto 22px}
+  .sub-form{margin-top:30px;padding-top:24px}
+  .legal{padding:44px 0 10px}
+  .acc summary{font-size:17px;padding:16px 0}
+  footer{padding:28px 0 40px}
+  footer .wrap{flex-direction:column;align-items:flex-start;gap:12px}
+}
+
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.chip,.notif{opacity:1;transform:none}}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
 </style>
@@ -967,7 +1120,7 @@ document.querySelectorAll('form[data-subscribe]').forEach(function(f){
   function fill(i){var p=(i.value-i.min)/(i.max-i.min)*100;i.style.setProperty('--f',p+'%')}
   function calc(){
     var l=L[rider],w=+sl.w.value,g=+sl.g.value,r=+sl.r.value,t=+sl.t.value;
-    $('#o-wind').textContent=w+' km/h';$('#o-gust').textContent=g+' km/h';$('#o-rain').textContent=r+'%';$('#o-temp').textContent=t+'°';
+    $('#o-wind').innerHTML=w+' km/h<span class=lim> / '+l.w+'</span>';$('#o-gust').innerHTML=g+' km/h<span class=lim> / '+l.g+'</span>';$('#o-rain').innerHTML=r+'%<span class=lim> / '+l.r+'</span>';$('#o-temp').innerHTML=t+'°<span class=lim> / min '+l.t+'°</span>';
     $('#h-wind').textContent='Your limit: '+l.w+' km/h';$('#h-gust').textContent='Your limit: '+l.g+' km/h';$('#h-rain').textContent='Your limit: '+l.r+'%';$('#h-temp').textContent='Your minimum: '+l.t+'°';
     var cold=t<l.t?Math.min(40,(l.t-t)*6):t<l.t+4?(l.t+4-t)*2:0, hot=t>30?Math.min(30,(t-30)*4):0;
     var s=100-pen(w,l.w,32)-pen(g,l.g,28)-pen(r,l.r,38)-cold-hot;
