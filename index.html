@@ -615,6 +615,33 @@ input[type=range]{height:24px}
 }
 @media (max-width:380px){.avail .plats{display:none}}
 
+
+/* ===== round 4: text-led hero, app tour first ===== */
+.hero{position:relative;padding:clamp(36px,4.5vw,64px) 0 clamp(16px,2vw,28px);overflow:hidden;isolation:isolate}
+.hero .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:0}
+.hero h1{margin:22px 0 22px;font-size:clamp(58px,9vw,138px)}
+.hero .lede{max-width:34em;margin:0 auto}
+.hw{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:1}
+.hw path{stroke:#9DBCF7;stroke-width:1.6}
+.hero .perks{grid-template-columns:repeat(4,auto);justify-content:center;gap:14px 34px;max-width:none;margin-top:34px;padding-top:0;border-top:0;text-align:left}
+.peek{display:inline-flex;align-items:center;gap:8px;margin-top:30px;font-weight:600;font-size:15.5px;color:var(--blue);text-decoration:none;padding:10px 16px;border-radius:99px;background:#fff;border:1px solid var(--line);transition:transform .2s}
+.peek .ico{width:16px;height:16px;transform:rotate(90deg)}
+.peek:hover{transform:translateY(2px)}
+.tour{padding-top:clamp(20px,2.5vw,36px)}
+.tour .tour-grid{margin-top:8px}
+.final .avail{margin:0 auto 26px;position:relative;text-align:left;color:var(--ink)}
+.how{padding-top:clamp(56px,7vw,96px)}
+@media (max-width:1100px){.hero .perks{grid-template-columns:repeat(2,auto)}}
+@media (max-width:900px){
+  .hero{padding:26px 0 22px}
+  .hero h1{font-size:clamp(50px,14vw,64px);margin:14px 0 14px}
+  .hero .perks{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 12px;margin-top:22px;width:100%}
+  .peek{margin-top:20px;font-size:14.5px;padding:9px 14px}
+  .tour{padding-top:16px}
+  .how{padding-top:44px}
+  .final .avail{margin-bottom:20px}
+}
+
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.chip,.notif{opacity:1;transform:none}}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
 </style>
@@ -654,8 +681,9 @@ input[type=range]{height:24px}
   <div class="wrap">
     <a class="logo" href="#top" aria-label="RideCast home"><img class="wm" src="img/v3/wordmark-ink.png" alt="RideCast" width="126" height="24"></a>
     <nav aria-label="Main"><ul>
-      <li><a href="#how">How it works</a></li>
+      <li><a href="#screens">The app</a></li>
       <li><a href="#commuter">Commuter Mode</a></li>
+      <li><a href="#how">How it works</a></li>
       <li><a href="#try">Try it</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -667,77 +695,75 @@ input[type=range]{height:24px}
 <main id="top">
 <!-- HERO -->
 <section class="hero">
+  <svg class="winds hw" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-60 90 C 200 50, 420 130, 700 90 S 1100 60, 1280 90"/>
+    <path d="M-60 200 C 260 160, 520 240, 820 190 S 1140 180, 1280 210"/>
+    <path d="M-60 320 C 180 290, 500 370, 760 320 S 1120 300, 1280 330"/>
+    <path d="M-60 430 C 240 400, 460 470, 740 430 S 1100 410, 1280 440"/>
+  </svg>
   <div class="wrap">
-    <div>
-      <a class="avail rv" href="#download"><img src="img/v2/icon-512.png" alt="" width="34" height="34"><span><b>Free on iPhone &amp; Android</b><small>Ride weather, scored for you</small></span><span class="plats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 12.04c-.03-2.6 2.12-3.84 2.22-3.9-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.93-.03-.01-2.71-1.04-2.74-4.12-.02-2.58 2.11-3.82 2.21-3.88M14.6 4.5c.71-.87 1.19-2.07 1.06-3.27-1.02.04-2.27.68-3.01 1.54-.66.76-1.24 1.99-1.09 3.16 1.14.09 2.31-.58 3.04-1.43"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 18.5V10h12v8.5a1.5 1.5 0 0 1-1.5 1.5H16v2.25a1.25 1.25 0 0 1-2.5 0V20h-3v2.25a1.25 1.25 0 0 1-2.5 0V20h-.5A1.5 1.5 0 0 1 6 18.5zM3.75 10a1.25 1.25 0 0 1 2.5 0v5a1.25 1.25 0 0 1-2.5 0zm14 0a1.25 1.25 0 0 1 2.5 0v5a1.25 1.25 0 0 1-2.5 0zM6.1 9a6 6 0 0 1 3.1-4.6l-.9-1.6a.4.4 0 0 1 .7-.4l.93 1.65a6.1 6.1 0 0 1 4.14 0l.93-1.65a.4.4 0 0 1 .7.4l-.9 1.6A6 6 0 0 1 17.9 9zm3.4-2.25a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zm5 0a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5z"/></svg></span></span></a>
-      <h1 class="rv d1">Should you ride <span class="it">today?</span></h1>
-      <p class="lede rv d2">RideCast reads the forecast like a rider. Wind, gusts, rain and how it really feels, checked against your own limits and turned into one score and one clear answer.</p>
-      <div class="badges rv d3"><a class="store" href="https://apps.apple.com/nz/app/ridecast-ride-smarter/id6762062579"><svg viewBox="0 0 24 24" fill="#000"><path d="M17.05 12.04c-.03-2.6 2.12-3.84 2.22-3.9-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.93-.03-.01-2.71-1.04-2.74-4.12-.02-2.58 2.11-3.82 2.21-3.88M14.6 4.5c.71-.87 1.19-2.07 1.06-3.27-1.02.04-2.27.68-3.01 1.54-.66.76-1.24 1.99-1.09 3.16 1.14.09 2.31-.58 3.04-1.43"/></svg><span class="t"><small>Download on the</small><b>App Store</b></span></a><a class="store" href="https://play.google.com/store/apps/details?id=co.ridecast.app"><svg viewBox="0 0 24 24"><path fill="#EA4335" d="M3.6 2.1C3.3 2.4 3.1 2.9 3.1 3.5v17c0 .6.2 1.1.5 1.4l.1.1L13.3 12.6v-.2L3.7 2z"/><path fill="#FBBC04" d="M16.5 15.8l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2z"/><path fill="#34A853" d="M16.6 15.7L13.3 12.4 3.6 22.1c.4.4 1 .4 1.7.1z"/><path fill="#4285F4" d="M3.6 2.1l9.7 9.7 3.3-3.3-11.3-6.5c-.6-.4-1.2-.3-1.7.1"/></svg><span class="t"><small>Get it on</small><b>Google Play</b></span></a></div>
-      <div class="perks rv d3">
+    <span class="kick rv">For cyclists &amp; motorbike riders</span>
+    <h1 class="rv d1">Should you ride <span class="it">today?</span></h1>
+    <p class="lede rv d2">RideCast reads the forecast like a rider. Wind, gusts, rain and how it really feels, checked against your own limits and turned into one score and one clear answer.</p>
+    <div class="perks rv d3">
         <div><span class="pt"><svg class="ico"><use href="#i-bike"/></svg></span><p><b>Bike or motorbike</b><small>Scored for how you ride</small></p></div>
         <div><span class="pt"><svg class="ico"><use href="#i-pin"/></svg></span><p><b>Built for NZ weather</b><small>Any town or city</small></p></div>
         <div><span class="pt"><svg class="ico"><use href="#i-user-off"/></svg></span><p><b>No account</b><small>Open it and go</small></p></div>
         <div><span class="pt"><svg class="ico"><use href="#i-ad-off"/></svg></span><p><b>No ads</b><small>Not now, not ever</small></p></div>
       </div>
-    </div>
-    <div class="stage rv" id="stage">
-      <svg class="winds" viewBox="0 0 600 720" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M-40 120 C 120 90, 260 160, 420 120 S 620 90, 700 110"/>
-        <path d="M-40 230 C 140 200, 280 260, 460 220 S 640 210, 700 240"/>
-        <path d="M-40 360 C 100 330, 300 400, 450 350 S 620 330, 700 360"/>
-        <path d="M-40 470 C 160 440, 280 500, 430 470 S 640 450, 700 480"/>
-        <path d="M-40 580 C 120 560, 300 620, 460 580 S 640 560, 700 590"/>
-        <path d="M-40 660 C 160 640, 300 690, 440 660 S 640 650, 700 670"/>
-      </svg>
-      <div class="phone" aria-label="RideCast home screen showing a ride score of 100, Go ride">
-        <div class="scr" style="--sb:#F2F4F7">
-          <div class="sbar"><span>9:41</span><i class="isl"></i><span class="sic"><svg viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx=".7" fill="currentColor"/><rect x="4.5" y="5" width="3" height="6" rx=".7" fill="currentColor"/><rect x="9" y="2.5" width="3" height="8.5" rx=".7" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx=".7" fill="currentColor"/></svg><svg viewBox="0 0 15 11"><path d="M7.5 2.2c2 0 3.9.8 5.3 2.1l1.1-1.2A9.2 9.2 0 0 0 7.5.5 9.2 9.2 0 0 0 1.1 3.1l1.1 1.2a7.6 7.6 0 0 1 5.3-2.1zm0 3.3c1.1 0 2.2.4 3 1.2l1.1-1.2a5.9 5.9 0 0 0-8.2 0l1.1 1.2c.8-.8 1.9-1.2 3-1.2zm0 3.3c-.5 0-1 .2-1.3.5l1.3 1.4 1.3-1.4c-.3-.3-.8-.5-1.3-.5z" fill="currentColor"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="2" fill="currentColor"/><path d="M23 4v4c.8-.3 1.3-1.1 1.3-2S23.8 4.3 23 4z" fill="currentColor" opacity=".45"/></svg></span></div>
-          <img src="img/v3/home.jpg" width="780" height="1585" alt="RideCast today screen: score 100, Go ride, light winds and dry">
-        </div>
-      </div>
-      <div class="chip c1"><img class="notif-ic" src="img/v2/icon-512.png" alt=""><div><b>6:45 am · Go ride</b>Light winds and dry. Enjoy it.</div></div>
-      <div class="chip c2"><span class="tile blue"><svg class="ico w-anim"><use href="#i-wind"/></svg></span><div><b>9 km/h from SE</b>Well under your 30 limit</div></div>
-      <div class="chip c3"><span class="tile green"><svg class="ico"><use href="#i-clock"/></svg></span><div><b>Good all day</b>Best time 5am to 11pm</div></div>
-    </div>
+    <a class="peek rv d3" href="#screens">See inside the app <svg class="ico"><use href="#i-arrow"/></svg></a>
   </div>
 </section>
 
 
 
-<!-- HOW -->
-<section class="how" id="how">
+<!-- TOUR -->
+<section class="tour" id="screens">
   <div class="wrap">
-    <div class="sec-head">
-      <div><span class="kick rv">How it works</span><h2 class="rv d1" style="margin-top:18px">A decision, <span class="it">not</span> a forecast.</h2></div>
-      <p class="lede rv d2">Weather apps hand you numbers and leave the thinking to you. RideCast does the thinking, hour by hour, the way a rider would.</p>
-    </div>
-    <div class="steps">
-      <article class="step rv">
-        <span class="num">01</span>
-        <div class="viz"><div class="feed">
-          <div><svg class="ico"><use href="#i-wind"/></svg>Wind<b>9 km/h SE</b></div>
-          <div><svg class="ico"><use href="#i-gust"/></svg>Gusts<b>25 km/h</b></div>
-          <div><svg class="ico"><use href="#i-drop"/></svg>Rain<b>0%</b></div>
+    <span class="kick rv">Inside the app</span>
+    <h2 class="rv d1" style="margin-top:18px;max-width:12em">Everything you need <span class="it">before</span> you clip in.</h2>
+    <div class="tour-grid">
+      <div class="tour-ph" aria-hidden="true">
+        <div class="phone"><div class="scr" style="--sb:#F2F4F7">
+          <div class="sbar"><span>9:41</span><i class="isl"></i><span class="sic"><svg viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx=".7" fill="currentColor"/><rect x="4.5" y="5" width="3" height="6" rx=".7" fill="currentColor"/><rect x="9" y="2.5" width="3" height="8.5" rx=".7" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx=".7" fill="currentColor"/></svg><svg viewBox="0 0 15 11"><path d="M7.5 2.2c2 0 3.9.8 5.3 2.1l1.1-1.2A9.2 9.2 0 0 0 7.5.5 9.2 9.2 0 0 0 1.1 3.1l1.1 1.2a7.6 7.6 0 0 1 5.3-2.1zm0 3.3c1.1 0 2.2.4 3 1.2l1.1-1.2a5.9 5.9 0 0 0-8.2 0l1.1 1.2c.8-.8 1.9-1.2 3-1.2zm0 3.3c-.5 0-1 .2-1.3.5l1.3 1.4 1.3-1.4c-.3-.3-.8-.5-1.3-.5z" fill="currentColor"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="2" fill="currentColor"/><path d="M23 4v4c.8-.3 1.3-1.1 1.3-2S23.8 4.3 23 4z" fill="currentColor" opacity=".45"/></svg></span></div>
+          <div class="stack" id="tourStack">
+            <img class="show" src="img/v3/home.jpg" width="780" height="1585" alt="">
+            <img src="img/v3/forecast.jpg" width="780" height="1585" alt="" loading="lazy">
+            <img src="img/v3/profile.jpg" width="780" height="1585" alt="" loading="lazy">
+            <img src="img/v3/rides.jpg" width="780" height="1585" alt="" loading="lazy">
+          </div>
         </div></div>
-        <h3>We read the sky, hour by hour</h3>
-        <p>Wind, gusts, rain chance and amount, temperature and feels-like, for every hour you might ride.</p>
-      </article>
-      <article class="step rv d1">
-        <span class="num">02</span>
-        <div class="viz"><div class="bars">
-          <div class="bar">Wind<div class="tr"><span class="fl" style="--v:30%"></span><span class="lm" style="--l:70%"></span></div></div>
-          <div class="bar warn">Gusts<div class="tr"><span class="fl" style="--v:78%"></span><span class="lm" style="--l:70%"></span></div></div>
-          <div class="bar">Rain<div class="tr"><span class="fl" style="--v:12%"></span><span class="lm" style="--l:60%"></span></div></div>
-        </div></div>
-        <h3>We check it against your limits</h3>
-        <p>A breezy day for a motorbike can be a hard day on a bike. You set what's too windy, too wet or too cold.</p>
-      </article>
-      <article class="step rv d2">
-        <span class="num">03</span>
-        <div class="viz"><div class="ring" id="howRing" style="--p:0"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="45"/><circle class="fg" cx="50" cy="50" r="45"/></svg><div class="val"><div><b data-n="0">0</b><small>GO RIDE</small></div></div></div></div>
-        <h3>You get one clear answer</h3>
-        <p>A score out of 100 and a verdict: go ride, rideable, or stay in. Plus the reasons, so you can trust it.</p>
-      </article>
+      </div>
+      <div>
+        <div class="tstep on" data-i="0">
+          <span class="tile"><svg class="ico"><use href="#i-gauge"/></svg></span>
+          <span class="mono">Today</span>
+          <h3>One score, every morning</h3>
+          <p>Open the app and the answer is the first thing you see: today's score, the verdict and a one-line reason. The day strip shows the rest of the week at a glance.</p>
+          <div class="mini"><div class="phone"><div class="scr"><div class="sbar"><span>9:41</span><i class="isl"></i><span class="sic"><svg viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx=".7" fill="currentColor"/><rect x="4.5" y="5" width="3" height="6" rx=".7" fill="currentColor"/><rect x="9" y="2.5" width="3" height="8.5" rx=".7" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx=".7" fill="currentColor"/></svg><svg viewBox="0 0 15 11"><path d="M7.5 2.2c2 0 3.9.8 5.3 2.1l1.1-1.2A9.2 9.2 0 0 0 7.5.5 9.2 9.2 0 0 0 1.1 3.1l1.1 1.2a7.6 7.6 0 0 1 5.3-2.1zm0 3.3c1.1 0 2.2.4 3 1.2l1.1-1.2a5.9 5.9 0 0 0-8.2 0l1.1 1.2c.8-.8 1.9-1.2 3-1.2zm0 3.3c-.5 0-1 .2-1.3.5l1.3 1.4 1.3-1.4c-.3-.3-.8-.5-1.3-.5z" fill="currentColor"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="2" fill="currentColor"/><path d="M23 4v4c.8-.3 1.3-1.1 1.3-2S23.8 4.3 23 4z" fill="currentColor" opacity=".45"/></svg></span></div><img src="img/v3/home.jpg" width="780" height="1585" alt="Today screen with a score of 100" loading="lazy"></div></div></div>
+        </div>
+        <div class="tstep" data-i="1">
+          <span class="tile"><svg class="ico"><use href="#i-cal"/></svg></span>
+          <span class="mono">7-day forecast</span>
+          <h3>Plan your week of riding</h3>
+          <p>Every day scored, with the best time to ride and an hour-by-hour chart of wind, gusts and rain.</p>
+          <div class="mini"><div class="phone"><div class="scr"><div class="sbar"><span>9:41</span><i class="isl"></i><span class="sic"><svg viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx=".7" fill="currentColor"/><rect x="4.5" y="5" width="3" height="6" rx=".7" fill="currentColor"/><rect x="9" y="2.5" width="3" height="8.5" rx=".7" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx=".7" fill="currentColor"/></svg><svg viewBox="0 0 15 11"><path d="M7.5 2.2c2 0 3.9.8 5.3 2.1l1.1-1.2A9.2 9.2 0 0 0 7.5.5 9.2 9.2 0 0 0 1.1 3.1l1.1 1.2a7.6 7.6 0 0 1 5.3-2.1zm0 3.3c1.1 0 2.2.4 3 1.2l1.1-1.2a5.9 5.9 0 0 0-8.2 0l1.1 1.2c.8-.8 1.9-1.2 3-1.2zm0 3.3c-.5 0-1 .2-1.3.5l1.3 1.4 1.3-1.4c-.3-.3-.8-.5-1.3-.5z" fill="currentColor"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="2" fill="currentColor"/><path d="M23 4v4c.8-.3 1.3-1.1 1.3-2S23.8 4.3 23 4z" fill="currentColor" opacity=".45"/></svg></span></div><img src="img/v3/forecast.jpg" width="780" height="1585" alt="Seven-day forecast with every day scored" loading="lazy"></div></div></div>
+        </div>
+        <div class="tstep" data-i="2">
+          <span class="tile"><svg class="ico"><use href="#i-bike"/></svg></span>
+          <span class="mono">Made for you</span>
+          <h3>Your ride, your limits</h3>
+          <p>Bicycle or motorbike, your town, your alert time. Set how much wind and rain you'll put up with and RideCast scores the day for you.</p>
+          <div class="mini"><div class="phone"><div class="scr"><div class="sbar"><span>9:41</span><i class="isl"></i><span class="sic"><svg viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx=".7" fill="currentColor"/><rect x="4.5" y="5" width="3" height="6" rx=".7" fill="currentColor"/><rect x="9" y="2.5" width="3" height="8.5" rx=".7" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx=".7" fill="currentColor"/></svg><svg viewBox="0 0 15 11"><path d="M7.5 2.2c2 0 3.9.8 5.3 2.1l1.1-1.2A9.2 9.2 0 0 0 7.5.5 9.2 9.2 0 0 0 1.1 3.1l1.1 1.2a7.6 7.6 0 0 1 5.3-2.1zm0 3.3c1.1 0 2.2.4 3 1.2l1.1-1.2a5.9 5.9 0 0 0-8.2 0l1.1 1.2c.8-.8 1.9-1.2 3-1.2zm0 3.3c-.5 0-1 .2-1.3.5l1.3 1.4 1.3-1.4c-.3-.3-.8-.5-1.3-.5z" fill="currentColor"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="2" fill="currentColor"/><path d="M23 4v4c.8-.3 1.3-1.1 1.3-2S23.8 4.3 23 4z" fill="currentColor" opacity=".45"/></svg></span></div><img src="img/v3/profile.jpg" width="780" height="1585" alt="Profile with rider type, limits and notification time" loading="lazy"></div></div></div>
+        </div>
+        <div class="tstep" data-i="3">
+          <span class="tile"><svg class="ico"><use href="#i-trophy"/></svg></span>
+          <span class="mono">Ride log</span>
+          <h3>Keep the streak going</h3>
+          <p>Log your rides in a tap, tell us if the forecast was right, build streaks and earn 50 badges along the way.</p>
+          <div class="mini"><div class="phone"><div class="scr"><div class="sbar"><span>9:41</span><i class="isl"></i><span class="sic"><svg viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx=".7" fill="currentColor"/><rect x="4.5" y="5" width="3" height="6" rx=".7" fill="currentColor"/><rect x="9" y="2.5" width="3" height="8.5" rx=".7" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx=".7" fill="currentColor"/></svg><svg viewBox="0 0 15 11"><path d="M7.5 2.2c2 0 3.9.8 5.3 2.1l1.1-1.2A9.2 9.2 0 0 0 7.5.5 9.2 9.2 0 0 0 1.1 3.1l1.1 1.2a7.6 7.6 0 0 1 5.3-2.1zm0 3.3c1.1 0 2.2.4 3 1.2l1.1-1.2a5.9 5.9 0 0 0-8.2 0l1.1 1.2c.8-.8 1.9-1.2 3-1.2zm0 3.3c-.5 0-1 .2-1.3.5l1.3 1.4 1.3-1.4c-.3-.3-.8-.5-1.3-.5z" fill="currentColor"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="2" fill="currentColor"/><path d="M23 4v4c.8-.3 1.3-1.1 1.3-2S23.8 4.3 23 4z" fill="currentColor" opacity=".45"/></svg></span></div><img src="img/v3/rides.jpg" width="780" height="1585" alt="Ride log with 19 rides" loading="lazy"></div></div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -788,6 +814,44 @@ input[type=range]{height:24px}
   </div>
 </section>
 
+<!-- HOW -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="kick rv">How it works</span><h2 class="rv d1" style="margin-top:18px">A decision, <span class="it">not</span> a forecast.</h2></div>
+      <p class="lede rv d2">Weather apps hand you numbers and leave the thinking to you. RideCast does the thinking, hour by hour, the way a rider would.</p>
+    </div>
+    <div class="steps">
+      <article class="step rv">
+        <span class="num">01</span>
+        <div class="viz"><div class="feed">
+          <div><svg class="ico"><use href="#i-wind"/></svg>Wind<b>9 km/h SE</b></div>
+          <div><svg class="ico"><use href="#i-gust"/></svg>Gusts<b>25 km/h</b></div>
+          <div><svg class="ico"><use href="#i-drop"/></svg>Rain<b>0%</b></div>
+        </div></div>
+        <h3>We read the sky, hour by hour</h3>
+        <p>Wind, gusts, rain chance and amount, temperature and feels-like, for every hour you might ride.</p>
+      </article>
+      <article class="step rv d1">
+        <span class="num">02</span>
+        <div class="viz"><div class="bars">
+          <div class="bar">Wind<div class="tr"><span class="fl" style="--v:30%"></span><span class="lm" style="--l:70%"></span></div></div>
+          <div class="bar warn">Gusts<div class="tr"><span class="fl" style="--v:78%"></span><span class="lm" style="--l:70%"></span></div></div>
+          <div class="bar">Rain<div class="tr"><span class="fl" style="--v:12%"></span><span class="lm" style="--l:60%"></span></div></div>
+        </div></div>
+        <h3>We check it against your limits</h3>
+        <p>A breezy day for a motorbike can be a hard day on a bike. You set what's too windy, too wet or too cold.</p>
+      </article>
+      <article class="step rv d2">
+        <span class="num">03</span>
+        <div class="viz"><div class="ring" id="howRing" style="--p:0"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="45"/><circle class="fg" cx="50" cy="50" r="45"/></svg><div class="val"><div><b data-n="0">0</b><small>GO RIDE</small></div></div></div></div>
+        <h3>You get one clear answer</h3>
+        <p>A score out of 100 and a verdict: go ride, rideable, or stay in. Plus the reasons, so you can trust it.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- TRY -->
 <section class="try" id="try">
   <div class="wrap">
@@ -813,65 +877,6 @@ input[type=range]{height:24px}
         <h3 id="labT">Good riding. Get out there.</h3>
         <div class="why" id="labWhy"></div>
         <p class="fine">A simplified version of the RideCast score, with example limits. The app checks every hour of the day and uses limits you set.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TOUR -->
-<section class="tour" id="screens">
-  <div class="wrap">
-    <span class="kick rv">Inside the app</span>
-    <h2 class="rv d1" style="margin-top:18px;max-width:12em">Everything you need <span class="it">before</span> you clip in.</h2>
-    <div class="tour-grid">
-      <div class="tour-ph" aria-hidden="true">
-        <div class="phone"><div class="scr" style="--sb:#F2F4F7">
-          <div class="sbar"><span>9:41</span><i class="isl"></i><span class="sic"><svg viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx=".7" fill="currentColor"/><rect x="4.5" y="5" width="3" height="6" rx=".7" fill="currentColor"/><rect x="9" y="2.5" width="3" height="8.5" rx=".7" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx=".7" fill="currentColor"/></svg><svg viewBox="0 0 15 11"><path d="M7.5 2.2c2 0 3.9.8 5.3 2.1l1.1-1.2A9.2 9.2 0 0 0 7.5.5 9.2 9.2 0 0 0 1.1 3.1l1.1 1.2a7.6 7.6 0 0 1 5.3-2.1zm0 3.3c1.1 0 2.2.4 3 1.2l1.1-1.2a5.9 5.9 0 0 0-8.2 0l1.1 1.2c.8-.8 1.9-1.2 3-1.2zm0 3.3c-.5 0-1 .2-1.3.5l1.3 1.4 1.3-1.4c-.3-.3-.8-.5-1.3-.5z" fill="currentColor"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="2" fill="currentColor"/><path d="M23 4v4c.8-.3 1.3-1.1 1.3-2S23.8 4.3 23 4z" fill="currentColor" opacity=".45"/></svg></span></div>
-          <div class="stack" id="tourStack">
-            <img class="show" src="img/v3/home.jpg" width="780" height="1585" alt="">
-            <img src="img/v3/home-why.jpg" width="780" height="1585" alt="" loading="lazy">
-            <img src="img/v3/forecast.jpg" width="780" height="1585" alt="" loading="lazy">
-            <img src="img/v3/profile.jpg" width="780" height="1585" alt="" loading="lazy">
-            <img src="img/v3/rides.jpg" width="780" height="1585" alt="" loading="lazy">
-          </div>
-        </div></div>
-      </div>
-      <div>
-        <div class="tstep on" data-i="0">
-          <span class="tile"><svg class="ico"><use href="#i-gauge"/></svg></span>
-          <span class="mono">Today</span>
-          <h3>One score, every morning</h3>
-          <p>Open the app and the answer is the first thing you see: today's score, the verdict and a one-line reason. The day strip shows the rest of the week at a glance.</p>
-          <div class="mini"><div class="phone"><div class="scr"><div class="sbar"><span>9:41</span><i class="isl"></i><span class="sic"><svg viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx=".7" fill="currentColor"/><rect x="4.5" y="5" width="3" height="6" rx=".7" fill="currentColor"/><rect x="9" y="2.5" width="3" height="8.5" rx=".7" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx=".7" fill="currentColor"/></svg><svg viewBox="0 0 15 11"><path d="M7.5 2.2c2 0 3.9.8 5.3 2.1l1.1-1.2A9.2 9.2 0 0 0 7.5.5 9.2 9.2 0 0 0 1.1 3.1l1.1 1.2a7.6 7.6 0 0 1 5.3-2.1zm0 3.3c1.1 0 2.2.4 3 1.2l1.1-1.2a5.9 5.9 0 0 0-8.2 0l1.1 1.2c.8-.8 1.9-1.2 3-1.2zm0 3.3c-.5 0-1 .2-1.3.5l1.3 1.4 1.3-1.4c-.3-.3-.8-.5-1.3-.5z" fill="currentColor"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="2" fill="currentColor"/><path d="M23 4v4c.8-.3 1.3-1.1 1.3-2S23.8 4.3 23 4z" fill="currentColor" opacity=".45"/></svg></span></div><img src="img/v3/home.jpg" width="780" height="1585" alt="Today screen with a score of 100" loading="lazy"></div></div></div>
-        </div>
-        <div class="tstep" data-i="1">
-          <span class="tile"><svg class="ico"><use href="#i-sliders"/></svg></span>
-          <span class="mono">Know why</span>
-          <h3>Not just a number</h3>
-          <p>See exactly what's driving the score, each condition checked against your limit. Drag through the day to find the best hour to go.</p>
-          <div class="mini"><div class="phone"><div class="scr"><div class="sbar"><span>9:41</span><i class="isl"></i><span class="sic"><svg viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx=".7" fill="currentColor"/><rect x="4.5" y="5" width="3" height="6" rx=".7" fill="currentColor"/><rect x="9" y="2.5" width="3" height="8.5" rx=".7" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx=".7" fill="currentColor"/></svg><svg viewBox="0 0 15 11"><path d="M7.5 2.2c2 0 3.9.8 5.3 2.1l1.1-1.2A9.2 9.2 0 0 0 7.5.5 9.2 9.2 0 0 0 1.1 3.1l1.1 1.2a7.6 7.6 0 0 1 5.3-2.1zm0 3.3c1.1 0 2.2.4 3 1.2l1.1-1.2a5.9 5.9 0 0 0-8.2 0l1.1 1.2c.8-.8 1.9-1.2 3-1.2zm0 3.3c-.5 0-1 .2-1.3.5l1.3 1.4 1.3-1.4c-.3-.3-.8-.5-1.3-.5z" fill="currentColor"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="2" fill="currentColor"/><path d="M23 4v4c.8-.3 1.3-1.1 1.3-2S23.8 4.3 23 4z" fill="currentColor" opacity=".45"/></svg></span></div><img src="img/v3/home-why.jpg" width="780" height="1585" alt="Why the score is 100: wind, gusts, rain and temperature all good" loading="lazy"></div></div></div>
-        </div>
-        <div class="tstep" data-i="2">
-          <span class="tile"><svg class="ico"><use href="#i-cal"/></svg></span>
-          <span class="mono">7-day forecast</span>
-          <h3>Plan your week of riding</h3>
-          <p>Every day scored, with the best time to ride and an hour-by-hour chart of wind, gusts and rain.</p>
-          <div class="mini"><div class="phone"><div class="scr"><div class="sbar"><span>9:41</span><i class="isl"></i><span class="sic"><svg viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx=".7" fill="currentColor"/><rect x="4.5" y="5" width="3" height="6" rx=".7" fill="currentColor"/><rect x="9" y="2.5" width="3" height="8.5" rx=".7" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx=".7" fill="currentColor"/></svg><svg viewBox="0 0 15 11"><path d="M7.5 2.2c2 0 3.9.8 5.3 2.1l1.1-1.2A9.2 9.2 0 0 0 7.5.5 9.2 9.2 0 0 0 1.1 3.1l1.1 1.2a7.6 7.6 0 0 1 5.3-2.1zm0 3.3c1.1 0 2.2.4 3 1.2l1.1-1.2a5.9 5.9 0 0 0-8.2 0l1.1 1.2c.8-.8 1.9-1.2 3-1.2zm0 3.3c-.5 0-1 .2-1.3.5l1.3 1.4 1.3-1.4c-.3-.3-.8-.5-1.3-.5z" fill="currentColor"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="2" fill="currentColor"/><path d="M23 4v4c.8-.3 1.3-1.1 1.3-2S23.8 4.3 23 4z" fill="currentColor" opacity=".45"/></svg></span></div><img src="img/v3/forecast.jpg" width="780" height="1585" alt="Seven-day forecast with every day scored" loading="lazy"></div></div></div>
-        </div>
-        <div class="tstep" data-i="3">
-          <span class="tile"><svg class="ico"><use href="#i-bike"/></svg></span>
-          <span class="mono">Made for you</span>
-          <h3>Your ride, your limits</h3>
-          <p>Bicycle or motorbike, your town, your alert time. Set how much wind and rain you'll put up with and RideCast scores the day for you.</p>
-          <div class="mini"><div class="phone"><div class="scr"><div class="sbar"><span>9:41</span><i class="isl"></i><span class="sic"><svg viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx=".7" fill="currentColor"/><rect x="4.5" y="5" width="3" height="6" rx=".7" fill="currentColor"/><rect x="9" y="2.5" width="3" height="8.5" rx=".7" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx=".7" fill="currentColor"/></svg><svg viewBox="0 0 15 11"><path d="M7.5 2.2c2 0 3.9.8 5.3 2.1l1.1-1.2A9.2 9.2 0 0 0 7.5.5 9.2 9.2 0 0 0 1.1 3.1l1.1 1.2a7.6 7.6 0 0 1 5.3-2.1zm0 3.3c1.1 0 2.2.4 3 1.2l1.1-1.2a5.9 5.9 0 0 0-8.2 0l1.1 1.2c.8-.8 1.9-1.2 3-1.2zm0 3.3c-.5 0-1 .2-1.3.5l1.3 1.4 1.3-1.4c-.3-.3-.8-.5-1.3-.5z" fill="currentColor"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="2" fill="currentColor"/><path d="M23 4v4c.8-.3 1.3-1.1 1.3-2S23.8 4.3 23 4z" fill="currentColor" opacity=".45"/></svg></span></div><img src="img/v3/profile.jpg" width="780" height="1585" alt="Profile with rider type, limits and notification time" loading="lazy"></div></div></div>
-        </div>
-        <div class="tstep" data-i="4">
-          <span class="tile"><svg class="ico"><use href="#i-trophy"/></svg></span>
-          <span class="mono">Ride log</span>
-          <h3>Keep the streak going</h3>
-          <p>Log your rides in a tap, tell us if the forecast was right, build streaks and earn 50 badges along the way.</p>
-          <div class="mini"><div class="phone"><div class="scr"><div class="sbar"><span>9:41</span><i class="isl"></i><span class="sic"><svg viewBox="0 0 17 11"><rect x="0" y="7" width="3" height="4" rx=".7" fill="currentColor"/><rect x="4.5" y="5" width="3" height="6" rx=".7" fill="currentColor"/><rect x="9" y="2.5" width="3" height="8.5" rx=".7" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx=".7" fill="currentColor"/></svg><svg viewBox="0 0 15 11"><path d="M7.5 2.2c2 0 3.9.8 5.3 2.1l1.1-1.2A9.2 9.2 0 0 0 7.5.5 9.2 9.2 0 0 0 1.1 3.1l1.1 1.2a7.6 7.6 0 0 1 5.3-2.1zm0 3.3c1.1 0 2.2.4 3 1.2l1.1-1.2a5.9 5.9 0 0 0-8.2 0l1.1 1.2c.8-.8 1.9-1.2 3-1.2zm0 3.3c-.5 0-1 .2-1.3.5l1.3 1.4 1.3-1.4c-.3-.3-.8-.5-1.3-.5z" fill="currentColor"/></svg><svg viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="18" height="8" rx="2" fill="currentColor"/><path d="M23 4v4c.8-.3 1.3-1.1 1.3-2S23.8 4.3 23 4z" fill="currentColor" opacity=".45"/></svg></span></div><img src="img/v3/rides.jpg" width="780" height="1585" alt="Ride log with 19 rides" loading="lazy"></div></div></div>
-        </div>
       </div>
     </div>
   </div>
@@ -1001,8 +1006,9 @@ input[type=range]{height:24px}
   <svg class="winds" viewBox="0 0 600 720" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;z-index:-1">
     <path d="M-40 120 C 120 90, 260 160, 420 120 S 620 90, 700 110"/><path d="M-40 260 C 140 230, 280 290, 460 250 S 640 240, 700 270"/><path d="M-40 400 C 100 370, 300 440, 450 390 S 620 370, 700 400"/><path d="M-40 520 C 160 490, 280 550, 430 520 S 640 500, 700 530"/><path d="M-40 630 C 120 610, 300 670, 460 630 S 640 610, 700 640"/>
   </svg>
+  <div class="avail rv"><img src="img/v2/icon-512.png" alt="" width="34" height="34"><span><b>Free on iPhone &amp; Android</b><small>Ride weather, scored for you</small></span><span class="plats"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 12.04c-.03-2.6 2.12-3.84 2.22-3.9-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.93-.03-.01-2.71-1.04-2.74-4.12-.02-2.58 2.11-3.82 2.21-3.88M14.6 4.5c.71-.87 1.19-2.07 1.06-3.27-1.02.04-2.27.68-3.01 1.54-.66.76-1.24 1.99-1.09 3.16 1.14.09 2.31-.58 3.04-1.43"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 18.5V10h12v8.5a1.5 1.5 0 0 1-1.5 1.5H16v2.25a1.25 1.25 0 0 1-2.5 0V20h-3v2.25a1.25 1.25 0 0 1-2.5 0V20h-.5A1.5 1.5 0 0 1 6 18.5zM3.75 10a1.25 1.25 0 0 1 2.5 0v5a1.25 1.25 0 0 1-2.5 0zm14 0a1.25 1.25 0 0 1 2.5 0v5a1.25 1.25 0 0 1-2.5 0zM6.1 9a6 6 0 0 1 3.1-4.6l-.9-1.6a.4.4 0 0 1 .7-.4l.93 1.65a6.1 6.1 0 0 1 4.14 0l.93-1.65a.4.4 0 0 1 .7.4l-.9 1.6A6 6 0 0 1 17.9 9zm3.4-2.25a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zm5 0a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5z"/></svg></span></span></div>
   <h2 class="rv">See you <span class="it">out there.</span></h2>
-  <p class="rv d1">Free on iPhone and Android. Set your limits once and get a straight answer every morning.</p>
+  <p class="rv d1">Set your limits once and get a straight answer every morning.</p>
   <div class="badges on-dark rv d2"><a class="store" href="https://apps.apple.com/nz/app/ridecast-ride-smarter/id6762062579"><svg viewBox="0 0 24 24" fill="#000"><path d="M17.05 12.04c-.03-2.6 2.12-3.84 2.22-3.9-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.88 2.65 3.22 2.6 1.29-.05 1.78-.83 3.34-.83 1.56 0 2 .83 3.37.81 1.39-.03 2.27-1.27 3.12-2.53.98-1.45 1.39-2.85 1.41-2.93-.03-.01-2.71-1.04-2.74-4.12-.02-2.58 2.11-3.82 2.21-3.88M14.6 4.5c.71-.87 1.19-2.07 1.06-3.27-1.02.04-2.27.68-3.01 1.54-.66.76-1.24 1.99-1.09 3.16 1.14.09 2.31-.58 3.04-1.43"/></svg><span class="t"><small>Download on the</small><b>App Store</b></span></a><a class="store" href="https://play.google.com/store/apps/details?id=co.ridecast.app"><svg viewBox="0 0 24 24"><path fill="#EA4335" d="M3.6 2.1C3.3 2.4 3.1 2.9 3.1 3.5v17c0 .6.2 1.1.5 1.4l.1.1L13.3 12.6v-.2L3.7 2z"/><path fill="#FBBC04" d="M16.5 15.8l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2z"/><path fill="#34A853" d="M16.6 15.7L13.3 12.4 3.6 22.1c.4.4 1 .4 1.7.1z"/><path fill="#4285F4" d="M3.6 2.1l9.7 9.7 3.3-3.3-11.3-6.5c-.6-.4-1.2-.3-1.7.1"/></svg><span class="t"><small>Get it on</small><b>Google Play</b></span></a></div>
   <form class="sub-form rv d3" data-subscribe novalidate>
     <label for="em">Get RideCast news, a few times a year</label>
